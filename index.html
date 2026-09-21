@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Fire Diamond Top-Up — Demo</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#070b2d;color:#fff}
+.wrap{max-width:1000px;margin:auto;padding:22px}
+header{background:linear-gradient(135deg,#171b63,#10133e);padding:22px;border-radius:18px;margin-bottom:18px;text-align:center;border:1px solid #313a91}
+.logo{font-weight:900;font-size:30px;color:#ff4b24}.sub{color:#d9ddff;margin-top:6px}
+.card{background:#111748;border:1px solid #29327e;border-radius:18px;padding:20px;margin-bottom:18px;box-shadow:0 10px 30px #0005}
+label{display:block;font-weight:700;margin-bottom:8px}.uid{width:100%;padding:15px;border:0;border-radius:10px;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+.pkg{background:#182064;border:2px solid transparent;border-radius:14px;padding:18px;text-align:center;cursor:pointer}
+.pkg:hover,.pkg.selected{border-color:#20d7ff;background:#202a79}
+.diamond{font-size:27px}.price{font-size:20px;font-weight:800;margin-top:8px}.note{font-size:13px;color:#bfc5ee;margin-top:5px}
+button{width:100%;padding:16px;border:0;border-radius:12px;background:#00a889;color:white;font-size:18px;font-weight:800;cursor:pointer;margin-top:18px}
+button:hover{background:#00bd9a}
+.whatsapp{background:#10a957}.whatsapp:hover{background:#12bd62}
+.small{font-size:12px;color:#aeb5df;text-align:center;margin-top:14px;line-height:1.5}
+.status{display:none;margin-top:14px;padding:12px;border-radius:10px;background:#17215c;color:#dce2ff}
+@media(max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}.wrap{padding:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo">FREE FIRE DIAMOND</div>
+  <div class="sub">Fast Top-Up Demo • Enter your Player UID and choose a package</div>
+</header>
+
+<section class="card">
+  <label for="uid">Player UID</label>
+  <input id="uid" class="uid" inputmode="numeric" placeholder="Enter Free Fire UID">
+  <div class="grid" id="packages">
+    <div class="pkg" data-pack="100 Diamonds" data-price="Rs. 150"><div class="diamond">💎</div><b>100 Diamonds</b><div class="price">Rs. 150</div></div>
+    <div class="pkg" data-pack="310 Diamonds" data-price="Rs. 400"><div class="diamond">💎</div><b>310 Diamonds</b><div class="price">Rs. 400</div></div>
+    <div class="pkg" data-pack="520 Diamonds" data-price="Rs. 650"><div class="diamond">💎</div><b>520 Diamonds</b><div class="price">Rs. 650</div></div>
+    <div class="pkg" data-pack="1060 Diamonds" data-price="Rs. 1,250"><div class="diamond">💎</div><b>1060 Diamonds</b><div class="price">Rs. 1,250</div></div>
+    <div class="pkg" data-pack="2180 Diamonds" data-price="Rs. 2,500"><div class="diamond">💎</div><b>2180 Diamonds</b><div class="price">Rs. 2,500</div></div>
+    <div class="pkg" data-pack="5600 Diamonds" data-price="Rs. 6,000"><div class="diamond">💎</div><b>5600 Diamonds</b><div class="price">Rs. 6,000</div></div>
+  </div>
+  <button id="order">Place Demo Order</button>
+  <div id="status" class="status"></div>
+  <button class="whatsapp" id="wa">Chat on WhatsApp</button>
+  <div class="small">Demo template only. This page does not connect to Garena or process real payments. Never enter your Facebook password, Gmail password, OTP, or recovery code on a top-up page.</div>
+</section>
+</div>
+
+<script>
+let selected=null;
+document.querySelectorAll('.pkg').forEach(p=>{
+  p.addEventListener('click',()=>{
+    document.querySelectorAll('.pkg').forEach(x=>x.classList.remove('selected'));
+    p.classList.add('selected'); selected=p;
+  });
+});
+document.getElementById('order').onclick=()=>{
+  const uid=document.getElementById('uid').value.trim();
+  const s=document.getElementById('status');
+  s.style.display='block';
+  if(!/^[0-9]{6,15}$/.test(uid)) {s.textContent='Please enter a valid numeric Player UID.';return;}
+  if(!selected){s.textContent='Please select a diamond package first.';return;}
+  s.textContent=`Demo order created: ${selected.dataset.pack} for UID ${uid} — ${selected.dataset.price}.`;
+};
+document.getElementById('wa').onclick=()=>{
+  const msg=encodeURIComponent('Hello, I need help with a Free Fire diamond top-up.');
+  window.open('https://wa.me/?text='+msg,'_blank');
+};
+</script>
+</body>
+</html>
