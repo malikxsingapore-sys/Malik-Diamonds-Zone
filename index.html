@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Free Fire Diamond Top-Up — Demo</title>
+<title>Free Fire Diamond Top-Up — Carding</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#070b2d;color:#fff}
 .wrap{max-width:1000px;margin:auto;padding:22px}
@@ -27,19 +27,19 @@ button:hover{background:#00bd9a}
 <div class="wrap">
 <header>
   <div class="logo">FREE FIRE DIAMOND</div>
-  <div class="sub">Fast Top-Up Demo • Enter your Player UID and choose a package</div>
+  <div class="sub">Fast Top-Up Carding • Enter your Player UID and choose a package</div>
 </header>
 
 <section class="card">
   <label for="uid">Player UID</label>
   <input id="uid" class="uid" inputmode="numeric" placeholder="Enter Free Fire UID">
   <div class="grid" id="packages">
-    <div class="pkg" data-pack="100 Diamonds" data-price="Rs. 150"><div class="diamond">💎</div><b>100 Diamonds</b><div class="price">Rs. 150</div></div>
-    <div class="pkg" data-pack="310 Diamonds" data-price="Rs. 400"><div class="diamond">💎</div><b>310 Diamonds</b><div class="price">Rs. 400</div></div>
-    <div class="pkg" data-pack="520 Diamonds" data-price="Rs. 650"><div class="diamond">💎</div><b>520 Diamonds</b><div class="price">Rs. 650</div></div>
-    <div class="pkg" data-pack="1060 Diamonds" data-price="Rs. 1,250"><div class="diamond">💎</div><b>1060 Diamonds</b><div class="price">Rs. 1,250</div></div>
-    <div class="pkg" data-pack="2180 Diamonds" data-price="Rs. 2,500"><div class="diamond">💎</div><b>2180 Diamonds</b><div class="price">Rs. 2,500</div></div>
-    <div class="pkg" data-pack="5600 Diamonds" data-price="Rs. 6,000"><div class="diamond">💎</div><b>5600 Diamonds</b><div class="price">Rs. 6,000</div></div>
+    <div class="pkg" data-pack="5000 Diamonds" data-price="Rs. 500"><div class="diamond">💎</div><b>5000 Diamonds</b><div class="price">Rs. 500</div></div>
+    <div class="pkg" data-pack="10000 Diamonds" data-price="Rs. 1000"><div class="diamond">💎</div><b>10000 Diamonds</b><div class="price">Rs. 1000</div></div>
+    <div class="pkg" data-pack="15000 Diamonds" data-price="Rs. 1500"><div class="diamond">💎</div><b>15000 Diamonds</b><div class="price">Rs. 1500</div></div>
+    <div class="pkg" data-pack="30000 Diamonds" data-price="Rs. 2500"><div class="diamond">💎</div><b>30000 Diamonds</b><div class="price">Rs. 2500</div></div>
+    <div class="pkg" data-pack="45000 Diamonds" data-price="Rs. 4000"><div class="diamond">💎</div><b>45000 Diamonds</b><div class="price">Rs. 4000</div></div>
+    <div class="pkg" data-pack="60000 Diamonds" data-price="Rs. 6,000"><div class="diamond">💎</div><b>60000 Diamonds</b><div class="price">Rs. 6,000</div></div>
   </div>
   <button id="order">Place Demo Order</button>
   <div id="status" class="status"></div>
@@ -62,11 +62,11 @@ document.getElementById('order').onclick=()=>{
   s.style.display='block';
   if(!/^[0-9]{6,15}$/.test(uid)) {s.textContent='Please enter a valid numeric Player UID.';return;}
   if(!selected){s.textContent='Please select a diamond package first.';return;}
-  s.textContent=`Demo order created: ${selected.dataset.pack} for UID ${uid} — ${selected.dataset.price}.`;
+  s.textContent=`Carding order created: ${selected.dataset.pack} for UID ${uid} — ${selected.dataset.price}.`;
 };
 document.getElementById('wa').onclick=()=>{
   const msg=encodeURIComponent('Hello, I need help with a Free Fire diamond top-up.');
-  window.open('https://wa.me/?text='+msg,'_blank');
+  window.open('https://wa.me/923276303979?text='+msg,'_blank');
 };
 </script>
 </body>
